@@ -1,0 +1,66 @@
+using System;
+
+namespace SampleCalculator;
+
+	class Calculator
+{
+    static void Main(string[] args)
+    {
+        double num1, num2, result = 0;
+        char operation;
+
+        Console.WriteLine("-------------------------");
+        Console.WriteLine("Simple Console Calculator");
+        Console.WriteLine("-------------------------");
+
+        
+        Console.Write("Enter the first number: ");
+        num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the operation (+, -, *, /): ");
+        operation = Convert.ToChar(Console.ReadLine());
+
+        
+        if (operation == '+')
+        {
+            result = num1 + num2;
+            Console.WriteLine("The Answer is : " + result);
+        }
+        else if (operation == '-')
+        {
+            result = num1 - num2;
+            Console.WriteLine("The Answer is : " + result);
+        }
+        else if (operation == '*')
+        {
+            result = num1 * num2;
+            Console.WriteLine("The Answer is : " + result);
+        }
+        else if (operation == '/')
+        {
+            
+            if (num2 != 0)
+            {
+                result = num1 / num2;
+                Console.WriteLine("The Answer is : " + result);
+            }
+            else
+            {
+                Console.WriteLine("Error: Division by zero is not allowed.");
+                return;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error: Invalid operation.");
+            return;
+        }
+
+        
+        Console.WriteLine($"Result: {num1} {operation} {num2} = {result}");
+    }
+
+}
